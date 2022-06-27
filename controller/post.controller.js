@@ -12,8 +12,7 @@ class PostController{
         const {id} = req.query
         const getPosts = await db.query(`SELECT title, content FROM post WHERE user_id=$1`, [id])
         res.json(getPosts.rows)
-        db.end();
-        return req.end();
+
     }
 
 }
